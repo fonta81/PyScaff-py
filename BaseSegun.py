@@ -16,7 +16,7 @@ class BaseProyecClass:
             subprocess.run(
                 ["git", "-C", self.preoyectoPath, "init"], capture_output=True
             )
-            print("CrearCarpetaBase = ")
+            print("\nCargando...\nPor favor espere")
         except Exception as e:
             print(f"CrearCarpetaBase/Error: {e}")
 
@@ -35,7 +35,6 @@ class BaseProyecClass:
             with open(readme, "w", encoding="utf-8"):
                 pass
             self.appPath = app
-            print("CrearDentroBase = ")
         except Exception as e:
             print(f"CrearDentroBase/Error: {e}")
 
@@ -53,7 +52,6 @@ class BaseProyecClass:
                 pass
             self.corePath = core
             self.utilPath = util
-            print("CrearDentroApp = ")
         except Exception as e:
             print(f"CrearDentroApp/Error: {e}")
 
@@ -67,7 +65,6 @@ class BaseProyecClass:
             for archivo in masrapido:
                 with open(archivo, "w", encoding="utf-8"):
                     pass
-            print("CrearDentroCore = ")
         except Exception as e:
             print(f"CrearDentroCore/Error: {e}")
 
@@ -80,7 +77,6 @@ class BaseProyecClass:
             for archivo in masrapido:
                 with open(archivo, "w", encoding="utf-8"):
                     pass
-            print("CrearDentroUtil = ")
         except Exception as e:
             print(f"CrearDentroUtil/Error: {e}")
 
@@ -90,6 +86,7 @@ class BaseProyecClass:
         self.CrearDentroApp()
         self.CrearDentroCore()
         self.CrearDentroUtil()
+        print("\nSu proyecto fue creado correctamente\n󰱱󰱱󰱱󰱱")
 
 
 def main():  # El menu principal
