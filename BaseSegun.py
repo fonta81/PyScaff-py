@@ -13,6 +13,9 @@ class BaseProyecClass:
         try:
             os.makedirs(NombreDeproyecto, exist_ok=True)
             self.preoyectoPath = os.path.join("", NombreDeproyecto)
+            subprocess.run(
+                ["git", "-C", self.preoyectoPath, "init"], capture_output=True
+            )
             print("CrearCarpetaBase = ")
         except Exception as e:
             print(f"CrearCarpetaBase/Error: {e}")
@@ -82,7 +85,7 @@ class BaseProyecClass:
             print(f"CrearDentroUtil/Error: {e}")
 
     def Usuario(self):
-        self.CrearCarpetaBase(input("Escriba el nombre de su proyecto"))
+        self.CrearCarpetaBase(input("Escriba el nombre de su proyecto: "))
         self.CrearDentroBase()
         self.CrearDentroApp()
         self.CrearDentroCore()
